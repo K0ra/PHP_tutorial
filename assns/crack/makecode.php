@@ -4,11 +4,13 @@ $md5 = false;
 $code = "";
 if ( isset($_GET['code']) ) {
     $code = $_GET['code'];
-    if ( strlen($code) != 4 )
-        $error = "Input must be exactly two characters";
-    for ( $i=0; $i<4; $i++ ) {
+    $len = strlen($code);
+    if ( $len < 3 && $len > 7 ) {
+        $error = "Input must be 3 to 7 characters";
+    }
+    for ( $i=0; $i<$len; $i++ ) {
         if ($code[$i] < "0" || $code[$i] > "9") {
-            $error = "Input must be four-digit characters";
+            $error = "Input must be digit characters";
             break;
         }
     }
@@ -17,7 +19,7 @@ if ( isset($_GET['code']) ) {
 }
 ?>
 <!DOCTYPE html>
-<head><title>Charles Severance PIN Code</title></head>
+<head><title>Korlan Argynova PIN Code</title></head>
 <body>
 <h1>MD5 PIN Maker</h1>
 <?php

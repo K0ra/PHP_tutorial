@@ -17,7 +17,7 @@
     **    **
 </pre>
 <?php
-echo 'The SHA256 hash of "Korlan Argynova" is ', hash('sha256', 'Korlan Argynova');
+echo 'The SHA256 hash of "Korlan Argynova" is ', hash('sha256', '000');
 ?>
 </br>
 <a href="check.php">Click here to see an error setting</a>
